@@ -1,4 +1,4 @@
-# Converter coin api
+# Coin converter api
 
 ## Technologies used in this api ##
 
