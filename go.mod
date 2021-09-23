@@ -5,7 +5,6 @@ go 1.16
 require (
 	github.com/andybalholm/brotli v1.0.3 // indirect
 	github.com/fsnotify/fsnotify v1.5.1 // indirect
-	github.com/gofiber/fiber/v2 v2.18.0 // indirect
 	github.com/gorilla/mux v1.8.0 // direct
 	github.com/klauspost/compress v1.13.5 // indirect
 	github.com/pelletier/go-toml v1.9.4 // indirect

@@ -24,14 +24,9 @@ func Exchange(w http.ResponseWriter, r *http.Request) {
 	conversion := models.Conversion{Amount: amount, From: from, To: to, Rate: rate}
 	models.DB.Create(&conversion)
 
-	var value float64
 	var symbol string
 
-	if from == "BRL" {
-		value = amount / rate
-	} else {
-		value = amount * rate
-	}
+	value := amount * rate
 
 	if to == "USD" {
 		symbol = "$"
