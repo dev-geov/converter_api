@@ -28,14 +28,17 @@ func Exchange(w http.ResponseWriter, r *http.Request) {
 
 	value := amount * rate
 
-	if to == "USD" {
+	switch to {
+	case "USD":
 		symbol = "$"
-	} else if to == "EUR" {
+	case "EUR":
 		symbol = "£"
-	} else if to == "BTC" {
+	case "BTC":
 		symbol = "B"
-	} else {
+	case "BRL":
 		symbol = "R$"
+	default:
+		symbol = "#"
 	}
 
 	result := models.Result{Value: value, CoinSymbol: symbol, ConversionID: conversion.ID}
