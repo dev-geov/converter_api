@@ -11,10 +11,12 @@ var DB *gorm.DB
 var err error
 
 var host = ViperEnvVariable("host")
+var database = ViperEnvVariable("database")
 var admin = ViperEnvVariable("admin")
 var password = ViperEnvVariable("password")
+var suffix = "?charset=utf8mb4&parseTime=True&loc=Local"
 
-var DNS = fmt.Sprintf("%s:%s@%s", admin, password, host)
+var DNS = fmt.Sprintf("%s:%s@%s/%s%s", admin, password, host, database, suffix)
 
 func InitialConfig() {
 	fmt.Println("Configuring app")
