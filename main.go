@@ -56,8 +56,8 @@ func Routers() {
 	router := mux.NewRouter()
 
 	router.HandleFunc("/exchange/{amount}/{from}/{to}/{rate}", Exchange)
-	router.HandleFunc("/exchange/conversions", controllers.GetConversions)
-	router.HandleFunc("/exchange/results", controllers.GetResults)
+	router.HandleFunc("/exchange/conversions/", controllers.GetConversions)
+	router.HandleFunc("/exchange/results/", controllers.GetResults)
 
 	log.Println("Running on port 8080")
 	http.ListenAndServe(":8080", router)
